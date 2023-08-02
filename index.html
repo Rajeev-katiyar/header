@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <header>
+        <section class="navbar">
+          <div class="header1">
+            <div class="logo1">
+              <img src="/static/img/logoeb.jpg" alt="Logo">
+            </div>
+            <div class="logo">
+              <h1>Engineer<span>bhaiya</span></h1>
+            </div>
+            <ul>
+              <li class="{% if request.path == 'home' %}active{% endif %}"><a href="{% url 'home' %}">Home</a></li>
+              <li class="{% if request.path == 'aboutus/' %}active{% endif %}"><a href="{% url 'aboutus' %}">About</a></li>
+              <li>
+                <a href="#">Services <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="{% url 'hotel' %}">Hotel</a></li>
+                    <li><a href="{% url 'restaurant' %}">Restaurant</a></li>
+                    <li><a href="{% url 'travel' %}">Travel</a></li>
+                    <li><a href="{% url 'guides' %}">Guides</a></li>
+                    <li><a href="{% url 'service' %}">Service</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="{% if request.path == 'contact/' %}active{% endif %}"><a href="{% url 'contact' %}">Contact us</a></li>
+            </ul>
+            <button class="btn1"><a href="{% url 'login' %}">Login</a></button>
+            <button class="btn1"><a href="{% url 'signup' %}">SignUp</a></button>
+          </div>
+        </section>
+      </header>
+      
+</body>
+</html>
